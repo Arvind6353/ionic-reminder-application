@@ -1,0 +1,20 @@
+<ion-view view-title="Main">
+    
+<ion-content scroll="true" class="has-tabs">
+	
+	<ion-list show-reorder = "true">
+   <ion-item ng-repeat = "item in items">
+      Item {{item.id}}
+      <ion-reorder-button class = "ion-navicon" on-reorder = "moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+   </ion-item>
+</ion-list>
+
+<br/>
+
+<button class = "button" ng-click="openModal ()">Modal Popup</button>
+
+
+
+</ion-content>
+</ion-view>
+  

@@ -1,0 +1,63 @@
+
+
+
+<ion-view view-title="Home" >
+   
+   <ion-nav-buttons side="primary">
+      <button class="button" ng-click="doSomething()">
+        <i class="icon ion-home"></i>
+		
+      </button>
+	  
+   </ion-nav-buttons>
+
+<ion-content>
+
+<div ng-if="userName">
+	
+	<br>
+	<center>
+	<span><i style="font-size:100px" class="icon ion-ios-calendar-outline"></i></span>	
+	<h1>Hello {{userName}}</h1>
+
+	
+	
+<br/>
+	
+	<span ng-if="todayCount!=0">
+	<h1>	You have &nbsp; <span style="font-weight:bold;font-size:34px;"><a href="#/viewTodayReminder" style="text-decoration:none;cursor:pointer ">
+
+		<button class="button button-positive">{{todayCount}}</button>
+
+
+	</a> </span> &nbsp; reminder<span ng-if="todayCount>1">s</span> today </h1>
+	</span>
+	
+	<span ng-if="todayCount==0">
+		<h1>You have &nbsp; <span style="font-weight:bold;font-size:34px;">{{todayCount}} </span> &nbsp; reminder today</h1>
+	</span>
+	
+</center>
+</div>
+</ion-content>
+</ion-view>
+
+		<!--
+		<ion-footer-bar align-title="center" class="bar-positive">
+			<div class="buttons">
+				<button class="button icon ion-home"></button>
+			</div>
+			<h1 class="title">Footer</h1>
+	</ion-footer-bar>	
+	->
+    <!--<ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content>
+      </ion-content>
+    </ion-pane> -->
+
+  
+  
+  

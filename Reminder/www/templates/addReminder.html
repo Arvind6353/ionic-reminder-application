@@ -1,0 +1,55 @@
+<ion-view view-title="Add Your Reminder" >
+    
+	
+   <ion-nav-buttons side="primary">
+      <a class="button" href="#/">
+        <i class="icon ion-home"></i>
+		</a>
+	  
+   </ion-nav-buttons>
+
+	
+<ion-content >
+
+<div class="list">
+  <label class="item item-input">
+    <span class="input-label">Title</span>
+    <input type="text" ng-model="reminder.title">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Message</span>
+    <input type="text" ng-model="reminder.message">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Date</span>
+    <input type="date"ng-model="reminder.date">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Time</span>
+    <input type="time" ng-model="reminder.time" value="00:00">
+  </label>
+  <label class="item item-input item-select" >
+    <span class="input-label">Repeat</span>
+	
+    <select ng-model="reminder.repeat" ng-options="it.value as it.text for it in repeatList">
+      
+    </select>
+
+	
+  </label>
+
+
+  <div class="padding">
+  <button class="button button-block button-dark" ng-click="addReminder()"> Add </button>
+  </div>
+</div>
+
+
+<br/>
+
+
+
+
+</ion-content>
+</ion-view>
+  

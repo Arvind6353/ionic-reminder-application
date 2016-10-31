@@ -1,0 +1,54 @@
+<ion-view view-title="Your Reminders" >
+    
+	
+	   
+   <ion-nav-buttons side="left">
+       <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+   </ion-nav-buttons>
+
+   
+   <ion-nav-buttons side="right">
+      <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+            Reorder
+        </button>
+
+   </ion-nav-buttons>
+
+   
+   
+<ion-content >
+	
+	<ion-list 
+   	  show-delete="data.showDelete" show-reorder="data.showReorder">
+   <ion-item ng-repeat = "reminder in reminders track by $index">
+      
+		<div class="card">
+			<div class="item item-divider">
+			{{reminder.title}}
+			</div>
+			<div class="item item-text-wrap">
+				{{reminder.message}}
+			</div>
+			<div class="item item-divider">
+				{{reminder.time | date : "medium"}}
+			
+			</div>
+		
+		
+		</div>
+	  <ion-delete-button class="ion-minus-circled"
+                       ng-click="deleteReminder(reminder)">
+    </ion-delete-button>
+	  
+      <ion-reorder-button class = "ion-navicon" on-reorder = "moveItem(reminder, $fromIndex, $toIndex)"></ion-reorder-button>
+   </ion-item>
+</ion-list>
+
+<br/>
+
+
+
+</ion-content>
+</ion-view>
+  
